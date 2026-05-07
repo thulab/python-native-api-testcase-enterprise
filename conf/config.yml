@@ -1,0 +1,20 @@
+# 基础配置
+enable_cluster: False # 不推荐使用
+enable_session_pool: False
+# 单机节点配置
+host: "127.0.0.1"
+port: "6667"
+username: "root"  # 若需要测试其他用户名和密码，需要屏蔽某些默认用户名和密码的测试
+password: "root"
+# 集群节点配置
+node_urls:
+  - "127.0.0.1:6667"
+  - "127.0.0.1:6668"
+  - "127.0.0.1:6669"
+# ssl测试配置
+use_ssl: False
+ca_certs: "ca_cert.pem"
+# RPC压缩配置
+enable_compression: False
+# 连接超时时间配置
+connection_timeout_in_ms: 10000

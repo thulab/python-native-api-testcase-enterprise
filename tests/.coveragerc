@@ -1,0 +1,10 @@
+[run]
+# 排除特定的文件和目录
+omit =
+    */iotdb/dbapi/*
+    */iotdb/sqlalchemy/*
+    */iotdb/thrift/*
+    */__init__.py
+    */read_write_io_utils.py
+    */pair.py
+    */template/*
