@@ -1,6 +1,6 @@
 # Python 原生接口测试工具使用说明
 
-本仓库用于验证 Apache IoTDB Python native API
+本仓库用于验证 TimechoDB Python native API
 
 ## 目录
 
@@ -20,13 +20,13 @@
 python-native-api-testcase/        # 仓库根目录
 ├─ assets/                         # README 或其他说明文档使用的图片资源
 ├─ conf/                           # 测试运行配置目录
-│  └─ config.yml                   # IoTDB 连接配置，包含单机/集群、账号、SSL、压缩、超时等参数
-├─ example/                        # Python native API 示例代码
+│  └─ config.yml                   # TimechoDB 连接配置，包含单机/集群、账号、SSL、压缩、超时等参数
+├─ example/                        # 示例代码目录
 │  ├─ table/                       # 表模型示例
 │  └─ tree/                        # 树模型示例
-├─ tests/                          # pytest 测试目录
-│  ├─ table/                       # 表模型测试用例，覆盖 TableSession、TableSessionPool、写入、查询等场景
-│  ├─ tree/                        # 树模型测试用例，覆盖 Session、SessionPool、数据库、写入、查询、时间序列等场景
+├─ tests/                          # 测试用例目录
+│  ├─ table/                       # 表模型测试用例
+│  ├─ tree/                        # 树模型测试用例
 │  └─ .coveragerc                  # 覆盖率统计配置文件
 ├─ README.md                       # 项目使用说明
 └─ requirements-dev.txt            # 本仓库测试和报告生成依赖
@@ -60,19 +60,19 @@ source venv/bin/activate
 python -m pip install -r requirements-dev.txt
 ```
 
-### 3. 安装 Apache IoTDB Python 客户端依赖
+### 3. 安装 Python 客户端依赖
 
-如果你已经有可用的 `apache-iotdb` wheel，直接安装即可：
+如果你已经有可用的依赖 wheel 包，直接安装即可：
 
 ```bash
 python -m pip install /path/to/apache_iotdb-*.whl
 ```
 
-没有的话需要从 IoTDB 源码构建：
+没有的话需要从 TimechoDB 源码构建：
 
 ```bash
-git clone https://github.com/apache/iotdb.git
-cd iotdb/iotdb-client/client-py
+git clone https://gitlab.timecho.com/r-d/db/timechodb.git
+cd timechodb/iotdb-client/client-py
 python -m pip install build
 ./release.sh # 仅支持在Linux/MacOS环境运行，若是需要在Windows环境运行，请自行在支持的环境编译后，再放到Windows环境安装
 cd <python-native-api-testcase>
@@ -87,19 +87,19 @@ python -m pip install /path/to/apache_iotdb-*.whl
 
 当前配置项说明如下：
 
-| 配置项 | 说明 |
-| --- | --- |
-| `enable_cluster` | 是否按集群模式连接 |
-| `enable_session_pool` | 是否在部分测试中使用 `SessionPool` 分支 |
-| `host` | 单机模式主机地址 |
-| `port` | 单机模式端口 |
-| `username` | 用户名，默认 `root` |
-| `password` | 密码，默认 `root` |
+| 配置项 | 说明                            |
+| --- |-------------------------------|
+| `enable_cluster` | 是否按集群模式连接                     |
+| `enable_session_pool` | 是否在部分测试中使用 `SessionPool` 分支   |
+| `host` | 单机模式主机地址                      |
+| `port` | 单机模式端口                        |
+| `username` | 用户名，默认 `root`                 |
+| `password` | 密码，默认 `TimechoDB@2021`        |
 | `node_urls` | 集群模式节点列表，格式如 `127.0.0.1:6667` |
-| `use_ssl` | 是否启用 SSL 连接 |
-| `ca_certs` | SSL 证书路径 |
-| `enable_compression` | 是否启用 RPC 压缩 |
-| `connection_timeout_in_ms` | 连接超时时间，单位毫秒 |
+| `use_ssl` | 是否启用 SSL 连接                   |
+| `ca_certs` | SSL 证书路径                      |
+| `enable_compression` | 是否启用 RPC 压缩                   |
+| `connection_timeout_in_ms` | 连接超时时间，单位毫秒                   |
 
 ## 使用
 
@@ -113,9 +113,6 @@ pytest
 # 按测试模型执行
 pytest tree
 pytest table
-# 按文件执行
-pytest tree/test_treemodel_session.py
-pytest table/test_tablemodel_session.py
 # 生成 HTML 测试报告
 pytest --html=report.html
 pytest --html=../reports/report.html

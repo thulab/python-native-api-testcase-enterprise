@@ -5,7 +5,7 @@ enable_session_pool: False
 host: "127.0.0.1"
 port: "6667"
 username: "root"  # 若需要测试其他用户名和密码，需要屏蔽某些默认用户名和密码的测试
-password: "root"
+password: "TimechoDB@2021"
 # 集群节点配置
 node_urls:
   - "127.0.0.1:6667"
