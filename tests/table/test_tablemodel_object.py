@@ -531,7 +531,7 @@ class TestNullValues(ObjectSessionTestBase):
             "n_partial",
             ["device", "obj_col"],
             [TSDataType.STRING, TSDataType.OBJECT],
-            [["d1", None], ["d2", None], ["d3", None]],
+            [["d1", None], ["d1", None], ["d1", None]],
             [1, 2, 3],
             [ColumnType.TAG, ColumnType.FIELD],
         )
