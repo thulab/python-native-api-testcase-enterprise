@@ -50,6 +50,11 @@ install_client() {
         return 0
     fi
     if [ -d "$PYTHON_CLIENT" ]; then
+        # TimechoDB 源码的 client-py 需要先由 Maven 生成 iotdb/thrift；
+        # PyPI 的 apache-iotdb 2.0.11 不含企业版 OBJECT 类型，因此这里用源码。
+        if [ ! -d "$PYTHON_CLIENT/iotdb/thrift" ] && [ -f "$PYTHON_CLIENT/pom.xml" ]; then
+            (cd "$PYTHON_CLIENT/../.." && mvn -q -DskipTests -pl iotdb-client/client-py -am package) || return 1
+        fi
         if [ -f "$PYTHON_CLIENT/pyproject.toml" ] || [ -f "$PYTHON_CLIENT/setup.py" ]; then
             "$PYTHON" -m pip install -q "$PYTHON_CLIENT" || return 1
         else

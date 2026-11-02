@@ -157,4 +157,4 @@ sh start.sh case <CASE_ID>          # 单条用例，产物写 $PLM_REPORT_DIR
 - `PLM_REPORT_DIR`：JUnit XML 输出目录（相对仓库根，默认 `reports/`）。
 - `IOTDB_HOST` / `IOTDB_PORT`：PLM 执行时由平台按 `k8sInstanceId` 注入 K8s 实例地址；PLM 执行缺少任一项时直接失败，**不会回退到 `conf/config.yml` 的 127.0.0.1**。手工本地运行可不设置。
 - `IOTDB_USER` / `IOTDB_PASSWORD`：可选覆盖；PLM 不注入数据库账号/口令，默认使用 `conf/config.yml` 的 `root/TimechoDB@2021`。
-- Python 客户端：`start.sh prepare` 优先使用 `PLM_IOTDB_PYTHON_CLIENT`（默认 `/root/test-program/timechodb-src/iotdb-client/client-py`）从源码安装，缺失时回退到 PyPI 的 `apache-iotdb`。
+- Python 客户端：`start.sh prepare` 优先使用 `PLM_IOTDB_PYTHON_CLIENT`（默认 `/root/test-program/timechodb-src/iotdb-client/client-py`）从 TimechoDB 源码安装；源码缺少 `iotdb/thrift` 时会先执行 `mvn -DskipTests -pl iotdb-client/client-py -am package` 生成。该源码客户端包含企业版 OBJECT 类型。
