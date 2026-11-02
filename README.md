@@ -142,3 +142,19 @@ pytest --cov=iotdb --cov-report=html:../cov-report --cov-branch --cov-config=.co
 
 - 测试文件名使用 `test_*.py`
 - 测试函数名使用 `test_*`
+
+## PLM 接入（start.sh）
+
+仓库根目录的 `start.sh` 是 TimechoPLM 测试程序统一入口，不改变原有 pytest 用法：
+
+```bash
+sh start.sh prepare                 # 创建 .venv、安装 pytest/客户端依赖
+sh start.sh list-cases --json       # 用例清单（stdout 仅 JSON）
+sh start.sh case <CASE_ID>          # 单条用例，产物写 $PLM_REPORT_DIR
+```
+
+- `PLM_AUTOMATION_TYPE`：PLM 绑定的仓库类型（默认 `session-python`）。
+- `PLM_REPORT_DIR`：JUnit XML 输出目录（相对仓库根，默认 `reports/`）。
+- `IOTDB_HOST` / `IOTDB_PORT`：PLM 执行时由平台按 `k8sInstanceId` 注入 K8s 实例地址；PLM 执行缺少任一项时直接失败，**不会回退到 `conf/config.yml` 的 127.0.0.1**。手工本地运行可不设置。
+- `IOTDB_USER` / `IOTDB_PASSWORD`：可选覆盖；PLM 不注入数据库账号/口令，默认使用 `conf/config.yml` 的 `root/TimechoDB@2021`。
+- Python 客户端：`start.sh prepare` 优先使用 `PLM_IOTDB_PYTHON_CLIENT`（默认 `/root/test-program/timechodb-src/iotdb-client/client-py`）从源码安装，缺失时回退到 PyPI 的 `apache-iotdb`。

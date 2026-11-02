@@ -1,0 +1,576 @@
+{
+  "productId": 1,
+  "defaults": {
+    "caseType": "功能测试",
+    "model": "表模型",
+    "owner": "肖林捷",
+    "automationType": "session-python",
+    "executeMethod": "自动"
+  },
+  "cases": [
+    {
+      "target": "table/test_tablemodel_object.py::TestTabletWrite::test_01_basic_write",
+      "name": "Python OBJECT｜Tablet 写入：使用 Tablet 写入单条 OBJECT 数据。",
+      "description": "用例01：使用 Tablet 写入单条 OBJECT 数据。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestTabletWrite::test_02_multiple_rows",
+      "name": "Python OBJECT｜Tablet 写入：使用 Tablet 连续写入多行 OBJECT 数据。",
+      "description": "用例02：使用 Tablet 连续写入多行 OBJECT 数据。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestTabletWrite::test_03_multiple_columns",
+      "name": "Python OBJECT｜Tablet 写入：单行中写入多个 OBJECT 列。",
+      "description": "用例03：单行中写入多个 OBJECT 列。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestTabletWrite::test_04_single_row_mixed_columns",
+      "name": "Python OBJECT｜Tablet 写入：单行混合写入普通列和 OBJECT 列。",
+      "description": "用例04：单行混合写入普通列和 OBJECT 列。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestTabletWrite::test_05_multi_row_mixed_columns",
+      "name": "Python OBJECT｜Tablet 写入：多行混合写入普通列和 OBJECT 列。",
+      "description": "用例05：多行混合写入普通列和 OBJECT 列。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestTabletWrite::test_06_add_by_name",
+      "name": "Python OBJECT｜Tablet 写入：通过列名写入 OBJECT 值。",
+      "description": "用例06：通过列名写入 OBJECT 值。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestNullValues::test_01_empty_payload",
+      "name": "Python OBJECT｜空值与空内容：写入空 OBJECT 内容。",
+      "description": "用例01：写入空 OBJECT 内容。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 空值"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestNullValues::test_02_sql_null",
+      "name": "Python OBJECT｜空值与空内容：在 OBJECT 列中写入 SQL NULL。",
+      "description": "用例02：在 OBJECT 列中写入 SQL NULL。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 空值"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestNullValues::test_03_tablet_partial_null",
+      "name": "Python OBJECT｜空值与空内容：Tablet 中部分行写 OBJECT、部分行为空。",
+      "description": "用例03：Tablet 中部分行写 OBJECT、部分行为空。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 空值"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestNullValues::test_04_alternating_null",
+      "name": "Python OBJECT｜空值与空内容：OBJECT 行与 SQL NULL 行交替写入。",
+      "description": "用例04：OBJECT 行与 SQL NULL 行交替写入。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 空值"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSQLWrite::test_01_sql_to_object",
+      "name": "Python OBJECT｜SQL 写入：使用 SQL 的 to_object 函数写入 OBJECT 数据。",
+      "description": "用例01：使用 SQL 的 to_object 函数写入 OBJECT 数据。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT SQL 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSQLWrite::test_02_sql_vs_tablet",
+      "name": "Python OBJECT｜SQL 写入：对比 SQL 写入和 Tablet 写入的 OBJECT 结果。",
+      "description": "用例02：对比 SQL 写入和 Tablet 写入的 OBJECT 结果。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT SQL 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSQLWrite::test_03_read_object_fails_with_zero_byte_row",
+      "name": "Python OBJECT｜SQL 写入：结果集中存在 0 字节 OBJECT 时，READ_OBJECT 应报错。",
+      "description": "用例03：结果集中存在 0 字节 OBJECT 时，READ_OBJECT 应报错。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT SQL 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSQLWrite::test_04_read_object_succeeds_after_filtering_to_normal_row",
+      "name": "Python OBJECT｜SQL 写入：过滤到正常 OBJECT 行后，READ_OBJECT 应成功。",
+      "description": "用例04：过滤到正常 OBJECT 行后，READ_OBJECT 应成功。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT SQL 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSQLWrite::test_05_read_object_fails_after_filtering_to_zero_byte_row",
+      "name": "Python OBJECT｜SQL 写入：过滤到 0 字节 OBJECT 行后，READ_OBJECT 仍应报错。",
+      "description": "用例05：过滤到 0 字节 OBJECT 行后，READ_OBJECT 仍应报错。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT SQL 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSQLWrite::test_06_select_still_returns_object_when_device_is_null",
+      "name": "Python OBJECT｜SQL 写入：device 为 SQL NULL 时，SELECT 仍应返回 OBJECT 数据。",
+      "description": "用例06：device 为 SQL NULL 时，SELECT 仍应返回 OBJECT 数据。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT SQL 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSQLWrite::test_07_select_still_returns_object_when_device_is_empty_string",
+      "name": "Python OBJECT｜SQL 写入：device 为空字符串时，SELECT 仍应返回 OBJECT 数据。",
+      "description": "用例07：device 为空字符串时，SELECT 仍应返回 OBJECT 数据。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT SQL 写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSegmentedWrite::test_01_complete_write",
+      "name": "Python OBJECT｜分段写入：单段完整写入 OBJECT 数据。",
+      "description": "用例01：单段完整写入 OBJECT 数据。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 分段写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSegmentedWrite::test_02_first_segment",
+      "name": "Python OBJECT｜分段写入：仅写入第一段非 EOF OBJECT 数据。",
+      "description": "用例02：仅写入第一段非 EOF OBJECT 数据。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 分段写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSegmentedWrite::test_03_segmented_write_complete",
+      "name": "Python OBJECT｜分段写入：通过多段合法片段完成 OBJECT 写入。",
+      "description": "用例03：通过多段合法片段完成 OBJECT 写入。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 分段写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSegmentedWrite::test_04_segmented_write_offset_gap",
+      "name": "Python OBJECT｜分段写入：分段 offset 不连续时应报错。",
+      "description": "用例04：分段 offset 不连续时应报错。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 分段写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestSegmentedWrite::test_05_segmented_write_offset_zero_resets",
+      "name": "Python OBJECT｜分段写入：新片段 offset 为 0 时应重置之前内容。",
+      "description": "用例05：新片段 offset 为 0 时应重置之前内容。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 分段写入"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestPayloadSizes::test_01_bytes",
+      "name": "Python OBJECT｜负载大小：写入 8 字节 payload。",
+      "description": "用例01：写入 8 字节 payload。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 负载大小"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestPayloadSizes::test_02_kb",
+      "name": "Python OBJECT｜负载大小：写入 1KB payload。",
+      "description": "用例02：写入 1KB payload。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 负载大小"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestPayloadSizes::test_03_10kb",
+      "name": "Python OBJECT｜负载大小：写入 10KB payload。",
+      "description": "用例03：写入 10KB payload。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 负载大小"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestPayloadSizes::test_04_100kb",
+      "name": "Python OBJECT｜负载大小：写入 100KB payload。",
+      "description": "用例04：写入 100KB payload。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 负载大小"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestPayloadSizes::test_05_mb",
+      "name": "Python OBJECT｜负载大小：写入 1MB payload。",
+      "description": "用例05：写入 1MB payload。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 负载大小"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestQueryMethods::test_01_read_object",
+      "name": "Python OBJECT｜查询：通过 READ_OBJECT 查询 OBJECT 值。",
+      "description": "用例01：通过 READ_OBJECT 查询 OBJECT 值。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 查询"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestQueryMethods::test_02_mixed_query",
+      "name": "Python OBJECT｜查询：普通列与 READ_OBJECT 混合查询。",
+      "description": "用例02：普通列与 READ_OBJECT 混合查询。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 查询"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_01_read_object_default",
+      "name": "Python OBJECT｜OBJECT 函数：默认读取完整 OBJECT 内容。",
+      "description": "用例01：默认读取完整 OBJECT 内容。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_02_read_object_with_offset_and_length",
+      "name": "Python OBJECT｜OBJECT 函数：按 offset 和 length 读取 OBJECT 片段。",
+      "description": "用例02：按 offset 和 length 读取 OBJECT 片段。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_03_read_object_length_larger_than_remaining",
+      "name": "Python OBJECT｜OBJECT 函数：length 大于剩余长度时读取剩余内容。",
+      "description": "用例03：length 大于剩余长度时读取剩余内容。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_04_read_object_negative_length_reads_remaining",
+      "name": "Python OBJECT｜OBJECT 函数：length 为负时读取剩余内容。",
+      "description": "用例04：length 为负时读取剩余内容。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_05_read_object_negative_offset_fails",
+      "name": "Python OBJECT｜OBJECT 函数：offset 为负时应报错。",
+      "description": "用例05：offset 为负时应报错。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_06_read_object_offset_equal_to_size_fails",
+      "name": "Python OBJECT｜OBJECT 函数：offset 等于对象长度时应报错。",
+      "description": "用例06：offset 等于对象长度时应报错。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_07_read_object_zero_byte_object_fails",
+      "name": "Python OBJECT｜OBJECT 函数：读取 0 字节 OBJECT 时应报错。",
+      "description": "用例07：读取 0 字节 OBJECT 时应报错。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_08_length_function",
+      "name": "Python OBJECT｜OBJECT 函数：正常 OBJECT 行的 LENGTH 结果校验。",
+      "description": "用例08：正常 OBJECT 行的 LENGTH 结果校验。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_09_length_for_zero_byte_object",
+      "name": "Python OBJECT｜OBJECT 函数：0 字节 OBJECT 行的 LENGTH 结果校验。",
+      "description": "用例09：0 字节 OBJECT 行的 LENGTH 结果校验。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_10_cast_object_as_string",
+      "name": "Python OBJECT｜OBJECT 函数：将 OBJECT 转为 STRING。",
+      "description": "用例10：将 OBJECT 转为 STRING。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_11_try_cast_object_as_string",
+      "name": "Python OBJECT｜OBJECT 函数：尝试将 OBJECT 转为 STRING。",
+      "description": "用例11：尝试将 OBJECT 转为 STRING。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_12_coalesce_object",
+      "name": "Python OBJECT｜OBJECT 函数：OBJECT 列使用 COALESCE。",
+      "description": "用例12：OBJECT 列使用 COALESCE。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestObjectFunctions::test_13_is_null_and_is_not_null",
+      "name": "Python OBJECT｜OBJECT 函数：OBJECT 列的 IS NULL / IS NOT NULL 判断。",
+      "description": "用例13：OBJECT 列的 IS NULL / IS NOT NULL 判断。",
+      "priority": "P1",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 函数"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestErrorHandling::test_01_wrong_column_type",
+      "name": "Python OBJECT｜错误处理：向非 OBJECT 列写入 OBJECT 时应报错。",
+      "description": "用例01：向非 OBJECT 列写入 OBJECT 时应报错。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 错误处理"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestErrorHandling::test_02_row_index_out_of_range",
+      "name": "Python OBJECT｜错误处理：行索引越界时应报错。",
+      "description": "用例02：行索引越界时应报错。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 错误处理"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::TestErrorHandling::test_03_column_name_not_found",
+      "name": "Python OBJECT｜错误处理：列名不存在时应报错。",
+      "description": "用例03：列名不存在时应报错。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 错误处理"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::test_object_column_category_cases",
+      "name": "Python OBJECT｜列类别限制：OBJECT 只允许作为 FIELD，不允许作为 TAG 或 ATTRIBUTE。",
+      "description": "用例01：OBJECT 只允许作为 FIELD，不允许作为 TAG 或 ATTRIBUTE。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 列类别与限制"
+      ]
+    },
+    {
+      "target": "table/test_tablemodel_object.py::test_object_restrict_limit_false_cases",
+      "name": "Python OBJECT｜命名限制：默认 false 限制下，特殊命名场景应正常通过。",
+      "description": "用例02：默认 false 限制下，特殊命名场景应正常通过。",
+      "priority": "P2",
+      "caseType": "功能测试",
+      "model": "表模型",
+      "automationType": "session-python",
+      "featurePaths": [
+        "接口模块/Python 原生接口/表模型 OBJECT 列类别与限制"
+      ]
+    }
+  ]
+}
